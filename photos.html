@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gallery Page</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header></header>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="#">Photos</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="breadcrumb">
+      <a href="index.html">Home</a> <span>&gt;</span>
+      <a href="photos.html">Photos</a>
+    </div>
+
+    <div class="content">
+      <h1>Gallery</h1>
+      <div class="thumbnail">
+        <img
+          id="galleryImage"
+          src="Buda-Castle-Chain-Bridge-and-Parliament-from-Gellert-hill-1858-2-X3-opt.jpg"
+          alt="Caption for image 1"
+          onclick="openOriginalSize()"
+        />
+      </div>
+      <div class="navigation">
+        <button id="prevButton">Previous</button>
+        <button id="nextButton">Next</button>
+      </div>
+    </div>
+
+    <script>
+      const images = [
+        "Buda-Castle-Chain-Bridge-and-Parliament-from-Gellert-hill-1858-2-X3-opt.jpg",
+        "2560px-Budapest,_Hungary_(explored)_(14995308504).jpg",
+        "budapest-danube-panorama-hd.jpg",
+        "fishermansbastionfromdanube.jpg",
+        // Add more images as needed
+      ];
+
+      let currentIndex = 0;
+
+      const galleryImage = document.getElementById("galleryImage");
+      const prevButton = document.getElementById("prevButton");
+      const nextButton = document.getElementById("nextButton");
+
+      prevButton.addEventListener("click", () => {
+        currentIndex = currentIndex > 0 ? currentIndex - 1 : images.length - 1;
+        galleryImage.src = images[currentIndex];
+        galleryImage.alt = `Caption for image ${currentIndex + 1}`;
+      });
+
+      nextButton.addEventListener("click", () => {
+        currentIndex = currentIndex < images.length - 1 ? currentIndex + 1 : 0;
+        galleryImage.src = images[currentIndex];
+        galleryImage.alt = `Caption for image ${currentIndex + 1}`;
+      });
+
+      function openOriginalSize() {
+        const imageUrl = images[currentIndex];
+        window.open(imageUrl, "_blank");
+      }
+    </script>
+    <footer>
+      <div>Connect with us on social media</div>
+      <div class="social-links">
+        <div class="thumbnail-links">
+          <a href="https://www.facebook.com/mustafailker.icoz/" target="_blank">
+            <img src="facebook-thumbnail.png" alt="Facebook" />
+          </a>
+          <a href="https://www.instagram.com/icoz.mustafa/" target="_blank">
+            <img src="instagram-thumbnail.png" alt="Instagram" />
+          </a>
+          <a href="https://x.com/darker2000" target="_blank">
+            <img src="twitter-thumbnail.png" alt="Twitter" />
+          </a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

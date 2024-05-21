@@ -1,0 +1,281 @@
+/* Common styles for all pages */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header,
+.banner {
+  background-image: url("Buda-Castle-Chain-Bridge-and-Parliament-from-Gellert-hill-1858-2-X3-opt.jpg"); /* Replace with your actual image path */
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header {
+  background-image: url("Buda-Castle-Chain-Bridge-and-Parliament-from-Gellert-hill-1858-2-X3-opt.jpg"); /* Replace with your actual image path */
+}
+
+.banner p {
+  font-size: 2rem;
+  color: white;
+}
+
+.nav,
+nav {
+  background-color: #f2f2f2;
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+}
+
+.nav a,
+nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: black;
+}
+
+.nav a:hover,
+nav a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb {
+  padding: 10px 15px;
+  background-color: #e1e1e1;
+  display: flex;
+}
+
+.breadcrumb a {
+  color: #0275d8;
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb span {
+  margin: 0 5px;
+}
+
+.content {
+  padding: 20px;
+  display: flex;
+  justify-content: space-around; /* Changed to space-around for equal spacing */
+  align-items: center;
+  flex-direction: column;
+}
+
+.column {
+  width: 48%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center; /* Added text-align for centering */
+}
+
+.column h2,
+h1,
+h2 {
+  margin: 0;
+  text-align: center;
+}
+
+.column p,
+p,
+table {
+  margin-top: 10px;
+  width: 80%;
+  text-align: center; /* Changed text alignment to center */
+}
+
+table {
+  margin-top: 20px;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  background-color: #ccc;
+  padding: 10px;
+  border: 1px solid #000;
+}
+
+th {
+  background-color: #aaa;
+}
+
+.contact-form {
+  width: 80%;
+  margin-top: 20px;
+}
+
+.contact-form textarea {
+  width: calc(100% - 20px);
+  height: 100px;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.contact-form input[type="reset"],
+.contact-form input[type="button"],
+.contact-form input[type="submit"] {
+  padding: 10px;
+  width: calc(50% - 2.5px);
+  margin: 5px 0;
+  cursor: pointer;
+}
+
+.contact-form label {
+  display: block;
+  margin: 10px 0;
+}
+
+.footer,
+footer {
+  background-color: #333; /* Dark grey background */
+  color: white;
+  text-align: center;
+  padding: 20px 10px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer .social-links,
+footer .social-links {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.footer .social-links a,
+footer .social-links a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #0275d8;
+}
+
+.footer .social-links a:hover,
+footer .social-links a:hover {
+  text-decoration: underline;
+}
+
+/* Additional styles for the gallery page */
+.thumbnail {
+  width: 600px; /* Fixed width */
+  height: 400px; /* Fixed height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #eee; /* Background color for the frame */
+  overflow: hidden; /* Hide overflow content */
+}
+
+.thumbnail img {
+  max-width: 100%; /* Ensure the image does not exceed the frame dimensions */
+  max-height: 100%;
+}
+
+.navigation {
+  margin-top: 20px;
+}
+
+.navigation button {
+  padding: 10px 20px;
+  margin: 0 10px;
+  cursor: pointer;
+  border: none;
+  background-color: #0275d8;
+  color: white;
+}
+
+.navigation button:hover {
+  background-color: #025aa5;
+}
+
+.social-links {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.social-links a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #0275d8;
+}
+
+.social-links a:hover {
+  text-decoration: underline;
+}
+
+/* Thumbnail links styling */
+.thumbnail-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.thumbnail-links a {
+  display: block;
+  width: 100px;
+  height: 100px;
+  background-color: #eee;
+  overflow: hidden;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  text-align: center;
+  line-height: 100px;
+  color: white;
+}
+
+.thumbnail-links a img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.thumbnail-links a:hover img {
+  transform: scale(1.1);
+}
+
+/* Styling visited and non-visited links */
+a:visited {
+  color: #551a8b;
+}
+
+/* Responsive design */
+@media (max-width: 1200px) {
+  .column {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+  }
+
+  .column {
+    width: 100%;
+  }
+}
+
+/* Print styles */
+@media print {
+  .nav,
+  .footer,
+  .banner,
+  .breadcrumb {
+    display: none;
+  }
+
+  .content {
+    padding: 0;
+    width: 100%;
+  }
+}
